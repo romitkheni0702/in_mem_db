@@ -6,11 +6,11 @@
 namespace imd {
 
 class Executor {
-public:
+  public:
     explicit Executor(Database& db) : db_(db) {}
     void execute(const Statement& st);
 
-private:
+  private:
     Database& db_;
     void exec(const CreateStmt& s);
     void exec(const InsertStmt& s);

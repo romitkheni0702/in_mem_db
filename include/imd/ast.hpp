@@ -15,17 +15,30 @@ enum class ColType { INT, STR };
 struct Value {
     std::variant<long long, std::string> data;
 
-    static Value makeInt(long long x) { return Value{ x }; }
-    static Value makeStr(std::string s) { return Value{ std::move(s) }; }
+    static Value makeInt(long long x) {
+        return Value{x};
+    }
+    static Value makeStr(std::string s) {
+        return Value{std::move(s)};
+    }
 
-    bool isInt() const { return std::holds_alternative<long long>(data); }
-    bool isStr() const { return std::holds_alternative<std::string>(data); }
+    bool isInt() const {
+        return std::holds_alternative<long long>(data);
+    }
+    bool isStr() const {
+        return std::holds_alternative<std::string>(data);
+    }
 
-    long long asInt() const { return std::get<long long>(data); }
-    const std::string& asStr() const { return std::get<std::string>(data); }
+    long long asInt() const {
+        return std::get<long long>(data);
+    }
+    const std::string& asStr() const {
+        return std::get<std::string>(data);
+    }
 
     std::string toString() const {
-        if (isInt()) return std::to_string(asInt());
+        if (isInt())
+            return std::to_string(asInt());
         return asStr();
     }
 };

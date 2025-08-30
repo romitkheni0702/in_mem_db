@@ -8,18 +8,20 @@
 namespace imd {
 
 class Parser {
-public:
+  public:
     explicit Parser(std::string src);
     std::vector<Statement> parseAll();
 
-private:
+  private:
     Lexer lx_;
     Token cur_;
 
-    void advance() { cur_ = lx_.next(); }
+    void advance() {
+        cur_ = lx_.next();
+    }
     bool accept(TokType t);
     void expect(TokType t, const char* msg);
-    bool acceptWord(const char* w);     // exact case-sensitive match (Identifier token)
+    bool acceptWord(const char* w); // exact case-sensitive match (Identifier token)
     void expectWord(const char* w, const char* msg);
 
     std::string parseIdent(const char* what);
