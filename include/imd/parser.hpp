@@ -33,7 +33,7 @@ class Parser {
     UpdateStmt parseUpdate();
     SelectStmt parseSelect();
 
-    Condition parseCondition(); // <ident> ( '=' | '!=' ) <literal>
+    Condition parseCondition(); // <ident> ( = | != | < | <= | > | >= ) <literal>
 };
 
 } // namespace imd

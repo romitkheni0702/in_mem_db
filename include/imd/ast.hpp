@@ -67,7 +67,7 @@ struct Database {
 };
 
 // ----- WHERE condition -----
-// Extended to support <, >, <=, >= (assignment extension)
+// Supports =, !=, <, <=, >, >=
 enum class CmpOp { EQ, NE, LT, LE, GT, GE };
 struct Condition {
     std::string column;

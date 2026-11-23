@@ -18,7 +18,7 @@ db: build
 
 tests: build
 
-# Run all Catch2 tests
+# Run all GoogleTest tests
 test: build
 	ctest --test-dir $(BDIR) -V
 

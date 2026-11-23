@@ -36,14 +36,13 @@ static bool isatty_stdout() {
 static void enableVT() {}
 #endif
 
-// ---- Banner: MINISQL (Q has a clear tail) ----
+// ---- Startup banner ----
 // clang-format off
 static const char* B0 = R"( __  __ ___ _   _ ___  ____    ___    _     )";
 static const char* B1 = R"(|  \/  |_ _| \ | |_ _|/ ___|  / __\  | |     )";
 static const char* B2 = R"(| |\/| || ||  \| || | \___ \ | | | | | |    )";
 static const char* B3 = R"(| |  | || || |\  || |  ___) || |_| | | |___  )";
 static const char* B4 = R"(|_|  |_|___|_| \_|___||____/  \__\ \ |_____| )";
-//                                      
 static const char* B5 = R"(W E L C O M E   T O   M I N I   S Q L     )";
 // clang-format on
 

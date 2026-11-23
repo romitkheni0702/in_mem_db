@@ -21,7 +21,7 @@ enum class TokType {
     Less,
     LessEq,
     Greater,
-    GreaterEq // <, <=, >, >=   <-- added
+    GreaterEq // <, <=, >, >=
 };
 
 struct Token {
@@ -55,7 +55,7 @@ class Lexer {
 };
 
 bool isUpperKeyword(const std::string& w); // CREATE/TABLE/INSERT/INTO/VALUES/SELECT/FROM/WHERE/DELETE/UPDATE/SET
-bool isTypeWord(const std::string& w);     // int / str (lowercase per spec)
+bool isTypeWord(const std::string& w);     // int / str (lowercase only)
 
 } // namespace imd
 

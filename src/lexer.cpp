@@ -36,7 +36,7 @@ Token Lexer::readString() {
             t.text = std::move(out);
             return t;
         }
-        out.push_back(c); // no escaping per spec
+        out.push_back(c); // escape sequences are not supported
     }
     throw std::runtime_error("Unterminated string literal");
 }
@@ -167,7 +167,7 @@ bool isUpperKeyword(const std::string& w) {
 }
 
 bool isTypeWord(const std::string& w) {
-    return (w == "int" || w == "str"); // exactly lowercase per spec
+    return (w == "int" || w == "str"); // type names are lowercase only
 }
 
 } // namespace imd

@@ -32,7 +32,7 @@ static bool equalValues(const Value& a, const Value& b) {
     return a.asStr() == b.asStr();
 }
 
-// Tri-state comparator for Value (clean, no warnings)
+// Three-way comparison of two Values: returns <0, 0 or >0
 static int compareValues(const Value& a, const Value& b) {
     if (a.isInt() && b.isInt()) {
         long long x = a.asInt();

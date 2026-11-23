@@ -33,10 +33,8 @@ static void printOneRow(const std::vector<std::string>& row, const std::vector<s
     os.put('|');
     for (size_t j = 0; j < w.size(); ++j) {
         const std::string cell = (j < row.size() ? row[j] : std::string());
-        // EXACTLY one space left and right of the cell content
-        os << ' ' << std::left << std::setw(static_cast<int>(w[j])) << cell
-           << ' ' // <-- the missing trailing space that fixes alignment
-           << '|';
+        // one space of padding on each side of the cell content
+        os << ' ' << std::left << std::setw(static_cast<int>(w[j])) << cell << ' ' << '|';
     }
     os << '\n';
 }
